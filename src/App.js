@@ -1,21 +1,34 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-class App extends Component {
+  class Signup extends Component {
+    constructor(props){
+      super()
+      this.state = {
+        email: "",
+        password: ""
+      }
+    }
+
+    handleClick(){
+      this.setState({
+        email: prompt("What is your email?"),
+        password: prompt("What is your password?")
+      })
+    }
+
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+      <form>
+          Email:
+          <input type="text" email="email" />
+          Password:
+          <input type="password" password="password" />
+          <input type="submit" value="Submit" />
+      </form>
       </div>
     );
   }
 }
 
-export default App;
+export default Signup;
